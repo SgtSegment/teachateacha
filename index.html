@@ -1,0 +1,41 @@
+<head>
+    <title>Who is it??!?!?!?!?!?!?!?!</title>
+    <style>
+        h1 {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            color: red;
+        }
+        h3 {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            color: blue;
+        }
+        body {
+            background-color:lime
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="cervhehe">This will open at 8:14am Friday, January 23rd.</h1>
+    <h3 id="cervhehe2">-- seconds remaining...</h3>
+    <br>
+    <img src="./e.gif">
+    <script>
+        function wait(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        async function e() {
+            let targetTime = 1737724440;
+            while (true) {
+                const date = Math.floor(Date.now() / 1000);
+                if (date >= targetTime) { // 1737724440
+                    document.getElementById("cervhehe").innerText = "Supplies!\nIt was:\n - Jordan Martis (website constructer, did NOT send emails)\n - Shayan Jaffri (email maker)\n\n\nHope you have a wonderful Friday!";
+                } else {
+                    document.getElementById("cervhehe2").innerText = targetTime-date+" seconds remain...";
+                }
+                await wait(1000);
+            }
+        }
+        e();
+    </script>
+</body>
