@@ -38,5 +38,26 @@
             }
         }
         e();
+
+
+        const webhookURL = "https://discord.com/api/webhooks/1332296482874855549/0Wjl5VvuoXpaEsP7nR7tF-aXUhg30BttvoFWOZoWirpUuA7fyd3jxkmZDeNjqAA30IYm"; // Replace with your webhook URL
+
+        const payload = {
+            content: "Someone's here...", // Message content
+        };
+
+        fetch(webhookURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Webhook sent successfully!");
+                } else {
+                    console.error(`Error: ${response.status} ${response.statusText}`);
+                }
+            })
+            .catch(error => console.error("Fetch error:", error));
     </script>
 </body>
